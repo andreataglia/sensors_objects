@@ -20,12 +20,3 @@ with open(config.DATA_IN_PATH, "r") as infile, open(config.DATA_OUT_PATH, "w") a
 						outfile.write(outputLine)
 						continue
 				
-		  #       if "window_outdoor" in line: 
-				#   outputLine = re.sub(r'("}},),*',',1', outputLine)
-				# elif "door_indoor" in line: 
-				#   outputLine = re.sub(r'("}},),*',',2', outputLine)
-				# elif "chair-1" in line: 
-				#   outputLine = re.sub(r'("}},),*',',3', outputLine)
-				# else:
-				#   continue
-				

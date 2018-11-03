@@ -1,28 +1,38 @@
-from keras.models import Sequential
-from keras.layers import Dense
-import numpy
-# fix random seed for reproducibility
-numpy.random.seed(7)
+%matplotlib inline
+import numpy as np
+import pandas as pd
 
-# load pima indians dataset
-dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
-# split into input (X) and output (Y) variables
-X = dataset[:,0:8]
-Y = dataset[:,8]
+ver=pd.read_csv("data/data_out.csv")
 
-#create model
-model = Sequential()
-model.add(Dense(12, input_dim=8, activation='relu'))
-model.add(Dense(8, activation='tanh'))
-model.add(Dense(1, activation='sigmoid'))
+ver.loan_purpose_name.value_counts().plot(kind='barh')
 
-# Compile model
-model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-# Fit/Train the model
-model.fit(X, Y, epochs=150, batch_size=10)
 
-# evaluate the model
-scores = model.evaluate(X, Y)
-print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+import matplotlib.pyplot as plt
+%matplotlib inline
+import numpy as np
+import pandas as pd
 
+data=pd.read_csv("data_out.csv")
+data.loc[:,['x','y','z']]
+data['x']
+
+X = [] # images
+y = [] # labels
+y = ver.loc[:,['obj']]
+ROWS = 4
+arr = []
+arr.append(ver.loc[0,['x','y','z']])
+X.append(ver.loc[0:3,['x','y','z']])
+X.append(ver.loc[4:7,['x','y','z']])
+X[1]
+
+#for i in range(0, 2):
+    #X.append(ver.loc[(i*ROWS)+1:((i+1)*ROWS),['x','y','z']])
+#Lets view some of the pics
+plt.figure(figsize=(10,5))
+columns = 3
+plt.subplot(5 / columns + 1, columns, 1 + 1)
+plt.imshow(X[0])
+plt.subplot(5 / columns + 1, columns, 2 + 1)
+plt.imshow(X[1])
