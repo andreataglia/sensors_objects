@@ -1,6 +1,7 @@
 from array import *
 
 #input file and ouput file
+
 DATA_IN_PATH = "raw_dataset/cleanedAccelGyroFused2.json"
 DATA_OUT_PATH = "prova.csv"
 
@@ -12,3 +13,4 @@ OBJECTS = [["door_apt_in", 0]]
 # 			["desk", 3],
 # 			["person", 4]]
 MEASURES = ["accelgyro"] #accel, gyro, magnto, temp(which gets the tuple pressure, temp, light)
+
